@@ -1,12 +1,14 @@
 "use client"
-
+ 
 const MyInfo = () => {
   return (
     <table style={{
         backgroundColor: "aliceblue",
         border: "1px solid black",
-        fontFamily: "sans-serif"
-    }}>
+        fontFamily: "sans-serif",
+        marginBottom: "10px"
+    }}
+    >
         <thead>
             <tr>
                 <th style={{border: "1px solid black", padding: "10px"}}>Name</th>
@@ -14,6 +16,7 @@ const MyInfo = () => {
                 <th style={{border: "1px solid black", padding: "10px"}}>Roll No</th>
             </tr>
         </thead>
+        
         <tbody>
             <tr>
                 <td style={{border: "1px solid black", padding: "10px"}}>Abdul Hannan</td>
