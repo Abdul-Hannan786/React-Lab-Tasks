@@ -19,7 +19,7 @@ const Categories = ({categories}: CategoryType) => {
                 <button 
                      key={category + i} 
                      onClick={() => {selectCategory(category)}} 
-                     style={{padding: "5px", marginLeft: "15px"}}>{category}
+                     style={{padding: "5px", marginLeft: "10px"}}>{category}
                 </button>
             ))
         }

@@ -1,8 +1,13 @@
 "use client"
  
 import Product from "./Product"
+import { ProductItemType } from "./product-type"
 
-const AllProducts = () => {
+type ProductListType = {
+  productList: ProductItemType[]
+}
+
+const AllProducts = ({productList}: ProductListType) => {
 
   return (
     <table style={{
@@ -22,9 +27,17 @@ const AllProducts = () => {
       </thead>
 
       <tbody>
-          <Product />
-          <Product />
-          <Product />
+          {
+            productList.map(({id, name, price, category}) => (
+              <Product 
+                  key={id + name}
+                  id={id}
+                  name={name}
+                  price={price}
+                  category={category}
+                  />
+            ))
+          }
       </tbody>
     </table>
   )

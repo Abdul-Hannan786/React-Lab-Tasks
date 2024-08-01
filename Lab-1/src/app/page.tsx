@@ -1,21 +1,61 @@
 "use client";
- 
+
 import { useState } from "react";
 import AllProducts from "./AllProducts";
 import MyInfo from "./MyInfo";
 import Categories from "./Categories";
+import { ProductItemType } from "./product-type";
+
+const products: ProductItemType[] = [
+  {
+    id: 1,
+    name: "IPhone 15 Pro Max",
+    price: 2500,
+    category: "Phones"
+  },
+  {
+    id: 2,
+    name: "Airpod",
+    price: 25,
+    category: "Gadgets"
+  },
+  {
+    id: 3,
+    name: "Eid Special Nara J.",
+    price: 25,
+    category: "Clothes"
+  },
+  {
+    id: 4,
+    name: "Tesla Cybertruck",
+    price: 65000,
+    category: "Cars"
+  },
+  {
+    id: 5,
+    name: "Macbook",
+    price: 2500,
+    category: "Computers"
+  }
+]
+
 
 export default function Home() {
-
   const [categList, setCategList] = useState([
-    "Phones", "Gadgets", "Clothes", "Cars", "Electronics"
-  ])
+    "All",
+    "Phones",
+    "Gadgets",
+    "Clothes",
+    "Cars",
+    "Electronics",
+  ]);
+  const [filteredProducts, setFilteredProducts] = useState(products)
 
   return (
     <>
       <MyInfo />
       <Categories categories={categList} />
-      <AllProducts />
+      <AllProducts productList={filteredProducts}/>
     </>
   );
 }
